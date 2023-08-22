@@ -1,15 +1,15 @@
 # WordPress Halim Themedev
-WordPress  Halim Theme Development (PSD To  WordPress)
 
+WordPress Halim Theme Development ( Convert PSD To WordPress)
 
-### Project 
+### Project
 
 WordPress Halim Theme Development
 
 Convert HTML to WordPress Theme
 
+### Features:
 
-### Features: 
 - **PHP**
 - **MySQL**
 - **WordPress**
@@ -17,7 +17,6 @@ Convert HTML to WordPress Theme
 - **jQuery**
 - **HTML5**
 - **CSS3**
-
 
 ### Home, Blog, Blog Single page
 
@@ -30,4 +29,3 @@ Convert HTML to WordPress Theme
 ### Portfolio, Gallery page
 
 ![portfolio-gallery](https://github.com/AbuSayedDev/wp-halim-themedev/assets/48875366/1319c598-3bca-4e3d-b2db-30a079364fc4)
-
