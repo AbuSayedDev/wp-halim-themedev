@@ -42,37 +42,21 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <ul>
-                                <li><a class="nav-link" href="index.html">Home</a></li>
-                                <li class="caret">
-                                    <a class="nav-link" href="about.html">About</a>
-                                    <ul>
-                                        <li><a href="">About Style 1</a></li>
-                                        <li><a href="">About Style 2</a></li>
-                                        <li><a href="">About Style 3</a></li>
-                                        <li><a href="">About Style 4</a></li>
-                                        <li><a href="">About Style 5</a></li>
-                                    </ul>
-                                </li>
-                                <li><a class="nav-link" href="services.html">Services</a></li>
-                                <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                                <li class="caret">
-                                    <a class="nav-link" href="gallery.html">Gallery</a>
-                                    <ul>
-                                        <li><a href="">Gallery Style 1</a></li>
-                                        <li><a href="">Gallery Style 2</a></li>
-                                        <li><a href="">Gallery Style 3</a></li>
-                                        <li><a href="">Gallery Style 4</a></li>
-                                        <li><a href="">Gallery Style 5</a></li>
-                                    </ul>
-                                </li>
-                                <li><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li><a class="nav-link" href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php  
+                            
+                        wp_nav_menu(array(
+                            'theme_location'       => 'primary_menu',
+                            'menu_class'           => '',
+                            'container'            => 'div',
+                            'container_class'      => 'collapse navbar-collapse justify-content-end',
+                            'container_id'         => 'navbarNavAltMarkup',
+                            'depth'                => 2,
+                            'menu_class'           => 'navbar-nav',
+                            'fallback_cb'          => '__return_false',
+                            'walker'               => new bootstrap_5_wp_nav_menu_walker()
+                        ));
+                    
+                    ?>
                 </nav>
             </div>
         </div>

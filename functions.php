@@ -1,5 +1,9 @@
 <?php
 
+// bootstrap 5 wp_nav_menu walker
+include_once('inc/bootstrap-nav-menu-walker.php');
+
+
 /**
  * Proper way to theme setup
  */
@@ -93,8 +97,6 @@ if( ! function_exists('halim_theme_scripts')){
 
     add_action( 'wp_enqueue_scripts', 'halim_theme_scripts' );
 }
-
-
 
 
 
