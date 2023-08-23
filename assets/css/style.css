@@ -1,19 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
 html,
 body {
   height: 100%;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   font-size: 16px;
   line-height: 28px;
   color: #333;
   font-weight: 400;
 }
 a {
-  color: #333;
-  text-decoration: none;
+  color: #333 !important;
+  text-decoration: none !important;
   transition: 0.3s;
 }
 .bg {
@@ -36,7 +34,7 @@ a {
 .box-btn {
 	display: inline-block;
 	background-color: #635cdb;
-	color: #fff;
+	color: #fff !important;
 	padding: 5px 30px;
 	text-transform: uppercase;
 	font-weight: 500;
@@ -389,7 +387,6 @@ a {
 }
 .single-progress .progress-bar {
   background-color: #635cdb;
-  padding: ;
 }
 .single-progress .progress {
   height: 25px;
@@ -661,7 +658,7 @@ a {
   padding: 0;
 }
 .single-footer ul li a {
-  color: #fff;
+  color: #fff !important;
 }
 .single-footer ul li {
   margin-bottom: 5px;
@@ -671,7 +668,6 @@ a {
   border-top: 1px solid #999;
   padding-top: 30px;
   margin-top: 30px;
-  margin: ;
 }
 .footer-social a {
   color: #fff;

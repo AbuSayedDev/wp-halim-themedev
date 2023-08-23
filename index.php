@@ -5,20 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title -->
     <title>Halim | Multipurpose Busienss Website</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <!-- Owl Carousel Main CSS -->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <!-- Owl Carousel Default CSS -->
-    <link rel="stylesheet" href="assets/css/owl.theme.default.css">
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Responsive CSS -->    
-    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
     
     <!-- Top Area Start Here -->
     <section class="top-area">
@@ -93,7 +83,7 @@
     <!-- Slider Area Start Here -->
     <section class="slider-area">
         <div class="sliders owl-carousel">
-            <div class="single-slide bg" style="background-image: url('assets/images/sliders/slide-1.jpg');">
+            <div class="single-slide bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/sliders/slide-1.jpg');">
                 <div class="container">
                     <div class="row">
                         <div class="col-xxl-12">
@@ -107,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single-slide bg" style="background-image: url('assets/images/sliders/slide-2.jpg');">
+            <div class="single-slide bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/sliders/slide-2.jpg');">
                 <div class="container">
                     <div class="row">
                         <div class="col-xxl-12">
@@ -121,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single-slide bg" style="background-image: url('assets/images/sliders/slide-3.jpg');">
+            <div class="single-slide bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/sliders/slide-3.jpg');">
                 <div class="container">
                     <div class="row">
                         <div class="col-xxl-12">
@@ -198,7 +188,7 @@
     <!-- About Area End Here -->
 
     <!-- Skill Area Start Here -->
-    <section class="skill-area bg pt-100 pb-100" style="background-image: url('assets/images/bg-skill.jpg');">
+    <section class="skill-area bg pt-100 pb-100" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/bg-skill.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
@@ -406,7 +396,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="single-team">
-                        <img src="assets/images/team/1.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/team/1.jpg" alt="">
                         <div class="team-content">
                             <h4>john doe <span>web developer</span></h4>
                             <div class="team-con">
@@ -421,7 +411,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="single-team">
-                        <img src="assets/images/team/2.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/team/2.jpg" alt="">
                         <div class="team-content">
                             <h4>john doe <span>web developer</span></h4>
                             <div class="team-con">
@@ -436,7 +426,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="single-team">
-                        <img src="assets/images/team/3.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/team/3.jpg" alt="">
                         <div class="team-content">
                             <h4>john doe <span>web developer</span></h4>
                             <div class="team-con">
@@ -455,7 +445,7 @@
     <!-- Team Area End Here -->
 
     <!-- Testimonials Area Start Here -->
-    <section class="testimonials-area pt-100 pb-100 bg" style="background-image: url('./assets/images/testi_back.jpg');">
+    <section class="testimonials-area pt-100 pb-100 bg" style="background-image: url('<?php echo get_template_directory_uri();?>./assets/images/testi_back.jpg');">
         <div class="container-fluid">
             <div class="row section-title align-items-center">
                 <div class="col-md-6 text-md-end text-sm-center">
@@ -470,23 +460,23 @@
                 <div class="testimonials owl-carousel">
                     <div class="single-testimonial">
                         <div>
-                            <img src="assets/images/testimonilas/01.png" alt="">
+                            <img src="<?php echo get_template_directory_uri();?>/assets/images/testimonilas/01.png" alt="">
                         </div>
                         <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
                         <h4>john doe <span>web developer</span></h4>
                     </div>
                     <div class="single-testimonial">
-                        <img src="assets/images/testimonilas/02.png" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/testimonilas/02.png" alt="">
                         <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
                         <h4>john doe <span>web developer</span></h4>
                     </div>
                     <div class="single-testimonial">
-                        <img src="assets/images/testimonilas/03.png" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/testimonilas/03.png" alt="">
                         <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
                         <h4>john doe <span>web developer</span></h4>
                     </div>
                     <div class="single-testimonial">
-                        <img src="assets/images/testimonilas/04.png" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/testimonilas/04.png" alt="">
                         <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
                         <h4>john doe <span>web developer</span></h4>
                     </div>
@@ -511,7 +501,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="single-blog">
-                        <img src="assets/images/blog/blog1.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/blog/blog1.jpg" alt="">
                         <div class="blog-content">
                             <div class="blog-title">
                                 <h4><a href="">blog title</a></h4>
@@ -527,7 +517,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="single-blog">
-                        <img src="assets/images/blog/blog2.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/blog/blog2.jpg" alt="">
                         <div class="blog-content">
                             <div class="blog-title">
                                 <h4><a href="">blog title</a></h4>
@@ -543,7 +533,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="single-blog">
-                        <img src="assets/images/blog/blog3.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/blog/blog3.jpg" alt="">
                         <div class="blog-content">
                             <div class="blog-title">
                                 <h4><a href="">blog title</a></h4>
@@ -579,7 +569,7 @@
     <!-- CTA Area End Here -->
 
     <!-- Footer Area Start Here -->
-    <footer class="footer-area bg" style="background-image: url('assets/images/footer-bg.png');">
+    <footer class="footer-area bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/footer-bg.png');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -645,19 +635,7 @@
     </footer>
     <!-- Footer Area End Here -->
 
-    <!-- Jquery JS -->
-    <script src="assets/js/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="assets/js/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <!-- Waypoint JS -->
-    <script src="assets/js/waypoint.min.js"></script>
-    <!-- CounterUp JS -->
-    <script src="assets/js/counterup.min.js"></script>
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    
+    <?php wp_footer(); ?>
 </body>
 </html>
