@@ -1,4 +1,4 @@
-# WordPress Halim Themedev
+# WordPress Halim Theme Development
 
 WordPress Halim Theme Development ( Convert PSD To WordPress)
 
