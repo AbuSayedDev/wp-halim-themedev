@@ -22,12 +22,9 @@ get_header(); ?>
             while ($query -> have_posts()) {
                 $query -> the_post();
 
-
-
-                $slider_subtitle = get_post_meta(get_the_ID(), 'slider_subtitle', true );
-                $slider_btn = get_post_meta(get_the_ID(), 'slider_btn', true );
-                $slider_btn_link = get_post_meta(get_the_ID(), 'slider_btn_link', true );
-
+                // $slider_subtitle = get_post_meta(get_the_ID(), 'slider_subtitle', true );
+                // $slider_button_text = get_post_meta(get_the_ID(), 'slider_button_text', true );
+                // $slider_button_url = get_post_meta(get_the_ID(), 'slider_button_url', true );
 
                 ?>
 
@@ -39,23 +36,27 @@ get_header(); ?>
 
                                     <?php 
 
-                                        if($slider_subtitle){
-                                            
-                                            ?>
+                                        if(get_field('slider_subtitle')){
 
-                                            <h4><?php echo $slider_subtitle; ?></h4>
-                                      <?php  }
+                                        ?>
+                                            <h4><?php the_field('slider_subtitle'); ?></h4>
+                                       <?php }
                                     ?>
 
+                                    
                                     <h1><?php the_title(); ?></h1>
                                     <?php the_content(); ?>
 
-                                    <?php if($slider_btn){
-
+                                    <?php 
+                                        if(get_field('slider_button_text')){
+                                            
                                         ?>
-                                            <a href="<?php echo $slider_btn_link; ?>" class="box-btn" target="_blink"><?php echo $slider_btn; ?></a>
-                                        <?php } 
+
+                                            <a href="<?php the_field('slider_button_url'); ?>" class="box-btn" target="_blink"><?php the_field('slider_button_text'); ?></a>
+                                       
+                                       <?php }
                                     ?>
+                                    
                                 </div> 
                             </div>
                         </div>
