@@ -50,12 +50,11 @@
                             'container'            => 'div',
                             'container_class'      => 'collapse navbar-collapse justify-content-end',
                             'container_id'         => 'navbarNavAltMarkup',
-                            'depth'                => 2,
-                            'menu_class'           => 'navbar-nav',
                             'fallback_cb'          => '__return_false',
+                            'items_wrap'           => '<ul id="%1$s" class="navbar-nav %2$s">%3$s</ul>',
+                            'depth'                => 2,
                             'walker'               => new bootstrap_5_wp_nav_menu_walker()
                         ));
-                    
                     ?>
                 </nav>
             </div>

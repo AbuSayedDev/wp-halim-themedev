@@ -224,6 +224,10 @@ a {
   transition: 0.3s;
 }
 
+#menu-primary-menu .current_page_item .active{
+  color:#635cdb !important;
+}
+
 /* Slider Area CSS */
 
 .slider-area,

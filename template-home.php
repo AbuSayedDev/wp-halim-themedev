@@ -9,48 +9,67 @@ get_header(); ?>
     <!-- Slider Area Start Here -->
     <section class="slider-area">
         <div class="sliders owl-carousel">
-            <div class="single-slide bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/sliders/slide-1.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xxl-12">
-                            <div class="slide-content">
-                                <h4>we are halim</h4>
-                                <h1>digital agency</h1>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas facere nostrum vel. Dolor accusantium animi laudantium placeat omnis eius consequuntur.</p>
-                                <a href="about.html" class="box-btn">contact us</a>
+
+
+        <?php 
+            $args = array(
+                'post_type'      => 'slider',
+                'post_per_pages' => 3
+            );
+
+            $query = new WP_Query($args);
+
+            while ($query -> have_posts()) {
+                $query -> the_post();
+
+
+
+                $slider_subtitle = get_post_meta(get_the_ID(), 'slider_subtitle', true );
+                $slider_btn = get_post_meta(get_the_ID(), 'slider_btn', true );
+                $slider_btn_link = get_post_meta(get_the_ID(), 'slider_btn_link', true );
+
+
+                ?>
+
+                <div class="single-slide bg" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-12">
+                                <div class="slide-content">
+
+                                    <?php 
+
+                                        if($slider_subtitle){
+                                            
+                                            ?>
+
+                                            <h4><?php echo $slider_subtitle; ?></h4>
+                                      <?php  }
+                                    ?>
+
+                                    <h1><?php the_title(); ?></h1>
+                                    <?php the_content(); ?>
+
+                                    <?php if($slider_btn){
+
+                                        ?>
+                                            <a href="<?php echo $slider_btn_link; ?>" class="box-btn" target="_blink"><?php echo $slider_btn; ?></a>
+                                        <?php } 
+                                    ?>
+                                </div> 
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="single-slide bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/sliders/slide-2.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xxl-12">
-                            <div class="slide-content">
-                                <h4>we are halim</h4>
-                                <h1>modern agency</h1>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas facere nostrum vel. Dolor accusantium animi laudantium placeat omnis eius consequuntur.</p>
-                                <a href="" class="box-btn">contact us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-slide bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/sliders/slide-3.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xxl-12">
-                            <div class="slide-content">
-                                <h4>we are halim</h4>
-                                <h1>creative agency</h1>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas facere nostrum vel. Dolor accusantium animi laudantium placeat omnis eius consequuntur.</p>
-                                <a href="" class="box-btn">contact us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <?php 
+
+            }
+
+            wp_reset_postdata();
+
+        ?>
+
         </div>
     </section>
     <!-- Slider Area End Here -->

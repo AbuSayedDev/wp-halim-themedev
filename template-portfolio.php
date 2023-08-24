@@ -39,7 +39,7 @@ get_header(); ?>
             <div class="row g-0 portfolio-items">
                 <div class="col-md-4 business finance">
                     <div class="single-portfolio">
-                        <img src="assets/images/portfolio/01.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/01.jpg" alt="">
                         <div class="portfolio-overlay">
                             <i class="fas fa-link"></i>
                             <h4>portfolio name <span>branding</span></h4>
@@ -48,7 +48,7 @@ get_header(); ?>
                 </div>
                 <div class="col-md-4 marketing idea">
                     <div class="single-portfolio">
-                        <img src="assets/images/portfolio/02.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/02.jpg" alt="">
                         <div class="portfolio-overlay">
                             <i class="fas fa-link"></i>
                             <h4>portfolio name <span>branding</span></h4>
@@ -57,7 +57,7 @@ get_header(); ?>
                 </div>
                 <div class="col-md-4 business finance idea">
                     <div class="single-portfolio">
-                        <img src="assets/images/portfolio/03.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/03.jpg" alt="">
                         <div class="portfolio-overlay">
                             <i class="fas fa-link"></i>
                             <h4>portfolio name <span>branding</span></h4>
@@ -66,7 +66,7 @@ get_header(); ?>
                 </div>
                 <div class="col-md-4 idea">
                     <div class="single-portfolio">
-                        <img src="assets/images/portfolio/04.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/04.jpg" alt="">
                         <div class="portfolio-overlay">
                             <i class="fas fa-link"></i>
                             <h4>portfolio name <span>branding</span></h4>
@@ -75,7 +75,7 @@ get_header(); ?>
                 </div>
                 <div class="col-md-4 marketing finance">
                     <div class="single-portfolio">
-                        <img src="assets/images/portfolio/05.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/05.jpg" alt="">
                         <div class="portfolio-overlay">
                             <i class="fas fa-link"></i>
                             <h4>portfolio name <span>branding</span></h4>
@@ -84,7 +84,7 @@ get_header(); ?>
                 </div>
                 <div class="col-md-4 idea finance">
                     <div class="single-portfolio">
-                        <img src="assets/images/portfolio/06.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/06.jpg" alt="">
                         <div class="portfolio-overlay">
                             <i class="fas fa-link"></i>
                             <h4>portfolio name <span>branding</span></h4>
