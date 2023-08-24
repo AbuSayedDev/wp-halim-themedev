@@ -22,10 +22,6 @@ get_header(); ?>
             while ($query -> have_posts()) {
                 $query -> the_post();
 
-                // $slider_subtitle = get_post_meta(get_the_ID(), 'slider_subtitle', true );
-                // $slider_button_text = get_post_meta(get_the_ID(), 'slider_button_text', true );
-                // $slider_button_url = get_post_meta(get_the_ID(), 'slider_button_url', true );
-
                 ?>
 
                 <div class="single-slide bg" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
@@ -237,6 +233,7 @@ get_header(); ?>
     <!-- Services Area Start Here -->
     <section class="services-area pt-100 pb-100">
         <div class="container">
+
             <div class="row section-title align-items-center">
                 <div class="col-md-6 text-md-end text-sm-center">
                     <span>who we are?</span>
@@ -246,49 +243,36 @@ get_header(); ?>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vitae dicta, hic sapiente sit perspiciatis modi officiis inventore architecto minima.</p>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-xl-4 col-lg-6">
-                    <div class="single-service">
-                        <i class="fas fa-laptop"></i>
-                        <h4>web design</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perferendis, deserunt quos ratione maxime doloribus asperiores hic obcaecati praesentium libero!</p>
+
+            <?php 
+
+                $args = array(
+                    'post_type'      => 'service',
+                    'post_per_pages' => 6
+                );
+
+                $query = new WP_Query($args);
+
+                while( $query -> have_posts()){
+                    $query -> the_post();
+
+                ?>
+
+                    <div class="col-xl-4 col-lg-6">
+                        <div class="single-service">
+                            <i class="fas fa-flag"></i>
+                            <h4>branding</h4>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perferendis, deserunt quos ratione maxime doloribus asperiores hic obcaecati praesentium libero!</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="single-service">
-                        <i class="fas fa-cogs"></i>
-                        <h4>web development</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perferendis, deserunt quos ratione maxime doloribus asperiores hic obcaecati praesentium libero!</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="single-service">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h4>responsive design</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perferendis, deserunt quos ratione maxime doloribus asperiores hic obcaecati praesentium libero!</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="single-service">
-                        <i class="fas fa-magic"></i>
-                        <h4>graphics design</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perferendis, deserunt quos ratione maxime doloribus asperiores hic obcaecati praesentium libero!</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="single-service">
-                        <i class="fas fa-pencil-alt"></i>
-                        <h4>creative design</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perferendis, deserunt quos ratione maxime doloribus asperiores hic obcaecati praesentium libero!</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="single-service">
-                        <i class="fas fa-flag"></i>
-                        <h4>branding</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perferendis, deserunt quos ratione maxime doloribus asperiores hic obcaecati praesentium libero!</p>
-                    </div>
-                </div>
+
+                <?php }
+
+                wp_reset_postdata();
+            ?>
+
             </div>
         </div>
     </section>

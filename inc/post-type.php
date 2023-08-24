@@ -33,7 +33,7 @@
             'uploaded_to_this_item' => __( 'Uploaded to this slider', 'wphalimtheme' ),
             'filter_items_list'     => __( 'Filter sliders list', 'wphalimtheme' ),
             'items_list_navigation' => __( 'Sliders list navigation', 'wphalimtheme' ),
-            'items_list'            => __( 'Sliders list', 'textdwphalimthemeomain' ),
+            'items_list'            => __( 'Sliders list', 'wphalimtheme' ),
 
         );
 
@@ -59,5 +59,67 @@
     }
 
     add_action('init', 'halim_slider_custom_posts');
+
+ }
+
+
+ /**
+ * Register a custom post type called "service".
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+
+ if(! function_exists('halim_service_custom_posts')){
+
+    function halim_service_custom_posts(){
+        $labels = array(
+            'name'                  => __( 'Services', 'wphalimtheme' ),
+            'singular_name'         => __( 'Service', 'wphalimtheme' ),
+            'menu_name'             => __( 'Services', 'wphalimtheme' ),
+            'name_admin_bar'        => __( 'Service', 'wphalimtheme' ),
+            'add_new'               => __( 'Add New', 'wphalimtheme' ),
+            'add_new_item'          => __( 'Add New Service', 'wphalimtheme' ),
+            'new_item'              => __( 'New Service', 'wphalimtheme' ),
+            'edit_item'             => __( 'Edit Service', 'wphalimtheme' ),
+            'view_item'             => __( 'View Service', 'wphalimtheme' ),
+            'all_items'             => __( 'All Services', 'wphalimtheme' ),
+            'search_items'          => __( 'Search Services', 'wphalimtheme' ),
+            'parent_item_colon'     => __( 'Parent Services:', 'wphalimtheme' ),
+            'not_found'             => __( 'No Services found.', 'wphalimtheme' ),
+            'not_found_in_trash'    => __( 'No Services found in Trash.', 'wphalimtheme' ),
+            'featured_image'        => __( 'Service Cover Image', 'wphalimtheme' ),
+            'set_featured_image'    => __( 'Set cover image', 'wphalimtheme' ),
+            'remove_featured_image' => __( 'Remove cover image', 'wphalimtheme' ),
+            'use_featured_image'    => __( 'Use as cover image', 'wphalimtheme' ),
+            'archives'              => __( 'Services archives', 'wphalimtheme' ),
+            'insert_into_item'      => __( 'Insert into Service','wphalimtheme' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Service', 'wphalimtheme' ),
+            'filter_items_list'     => __( 'Filter Services list', 'wphalimtheme' ),
+            'items_list_navigation' => __( 'Services list navigation', 'wphalimtheme' ),
+            'items_list'            => __( 'Services list', 'wphalimtheme' ),
+
+        );
+
+        $args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_in_menu'       => true,
+            'show_ui'            => true,
+            'show_in_rest'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'rewrite'            => array( 'slug' => 'service' ),
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields'),
+        );
+
+
+        register_post_type('service', $args);
+    }
+
+    add_action('init', 'halim_service_custom_posts');
 
  }
