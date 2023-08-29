@@ -351,7 +351,7 @@ get_header(); ?>
 
                 <div class="col-md-4">  
                     <div class="single-team">
-                        
+
                         <img src="<?php the_post_thumbnail_url();?>">
 
                         <div class="team-content">
@@ -468,61 +468,59 @@ get_header(); ?>
             <div class="row section-title align-items-center">
                 <div class="col-md-6 text-md-end text-sm-center">
                     <span>who we are?</span>
-                    <h4>what clients say?</h4>
+                    <h4>Latest News</h4>
                 </div>
                 <div class="col-md-6">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vitae dicta, hic sapiente sit perspiciatis modi officiis inventore architecto minima.</p>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-4">
-                    <div class="single-blog">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/blog/blog1.jpg" alt="">
-                        <div class="blog-content">
-                            <div class="blog-title">
-                                <h4><a href="">blog title</a></h4>
+
+            <?php
+
+                $args = array(
+                    'post_type'       => 'post',
+                    'posts_per_page'  => 3,
+                    'order'           => 'DESC'
+                );
+
+                $query = new WP_Query($args);
+
+                if($query -> have_posts()){
+                    while($query -> have_posts()){
+                        $query -> the_post();
+
+                    ?>
+
+                    <div class="col-md-4">
+                        <div class="single-blog">
+
+                            <?php the_post_thumbnail(); ?>
+
+                            <div class="blog-content">
+                                <div class="blog-title">
+                                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                </div>
+                                <div class="blog-meta">
+                                    <a href="">5 Jan 2020</a>
+                                    <a href="">admin</a>
+                                </div>
+                                <?php the_content(); ?>
+                                <a href="<?php the_permalink(); ?>" class="box-btn">read more</a>
                             </div>
-                            <div class="blog-meta">
-                                <a href="">5 Jan 2020</a>
-                                <a href="">admin</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis magnam a, culpa quis illum aut sint at. Nesciunt tempora officiis labore ducimus laborum saepe dicta?</p>
-                            <a href="" class="box-btn">read more</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-blog">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/blog/blog2.jpg" alt="">
-                        <div class="blog-content">
-                            <div class="blog-title">
-                                <h4><a href="">blog title</a></h4>
-                            </div>
-                            <div class="blog-meta">
-                                <a href="">5 Jan 2020</a>
-                                <a href="">admin</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis magnam a, culpa quis illum aut sint at. Nesciunt tempora officiis labore ducimus laborum saepe dicta?</p>
-                            <a href="" class="box-btn">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-blog">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/blog/blog3.jpg" alt="">
-                        <div class="blog-content">
-                            <div class="blog-title">
-                                <h4><a href="">blog title</a></h4>
-                            </div>
-                            <div class="blog-meta">
-                                <a href="">5 Jan 2020</a>
-                                <a href="">admin</a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis magnam a, culpa quis illum aut sint at. Nesciunt tempora officiis labore ducimus laborum saepe dicta?</p>
-                            <a href="" class="box-btn">read more</a>
-                        </div>
-                    </div>
-                </div>
+
+                 <?php   }
+
+                }else{ ?>
+                    <p style="color:red"> No News</p>
+               <?php }
+
+                wp_reset_postdata();
+
+            ?>
             </div>
         </div>
     </section>
@@ -530,3 +528,7 @@ get_header(); ?>
 
     
     <?php get_footer(); ?>
+
+
+
+
