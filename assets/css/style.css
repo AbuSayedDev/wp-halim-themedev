@@ -497,7 +497,7 @@ a {
   transform: scale(1) rotate(360deg);
 }
 .team-content a {
-  color: #fff;
+  color: #fff !important;
   margin: 0 5px;
 }
 .team-content:before {

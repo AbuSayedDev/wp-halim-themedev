@@ -185,3 +185,65 @@
     add_action('init', 'halim_counters_custom_posts');
 
  }
+
+
+ /**
+ * Register a custom post type called "Teams".
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+
+ if(! function_exists('halim_teams_custom_posts')){
+
+    function halim_teams_custom_posts(){
+        $labels = array(
+            'name'                  => __( 'Teams', 'wphalimtheme' ),
+            'singular_name'         => __( 'Team', 'wphalimtheme' ),
+            'menu_name'             => __( 'Teams', 'wphalimtheme' ),
+            'name_admin_bar'        => __( 'Team', 'wphalimtheme' ),
+            'add_new'               => __( 'Add New', 'wphalimtheme' ),
+            'add_new_item'          => __( 'Add New Team', 'wphalimtheme' ),
+            'new_item'              => __( 'New Team', 'wphalimtheme' ),
+            'edit_item'             => __( 'Edit Team', 'wphalimtheme' ),
+            'view_item'             => __( 'View Team', 'wphalimtheme' ),
+            'all_items'             => __( 'All Teams', 'wphalimtheme' ),
+            'search_items'          => __( 'Search Teams', 'wphalimtheme' ),
+            'parent_item_colon'     => __( 'Parent Teams:', 'wphalimtheme' ),
+            'not_found'             => __( 'No Teams found.', 'wphalimtheme' ),
+            'not_found_in_trash'    => __( 'No Teams found in Trash.', 'wphalimtheme' ),
+            'featured_image'        => __( 'Team Cover Image', 'wphalimtheme' ),
+            'set_featured_image'    => __( 'Set cover image', 'wphalimtheme' ),
+            'remove_featured_image' => __( 'Remove cover image', 'wphalimtheme' ),
+            'use_featured_image'    => __( 'Use as cover image', 'wphalimtheme' ),
+            'archives'              => __( 'Teams archives', 'wphalimtheme' ),
+            'insert_into_item'      => __( 'Insert into Team','wphalimtheme' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Team', 'wphalimtheme' ),
+            'filter_items_list'     => __( 'Filter Teams list', 'wphalimtheme' ),
+            'items_list_navigation' => __( 'Teams list navigation', 'wphalimtheme' ),
+            'items_list'            => __( 'Teams list', 'wphalimtheme' ),
+
+        );
+
+        $args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_in_menu'       => true,
+            'show_ui'            => true,
+            'show_in_rest'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'rewrite'            => array( 'slug' => 'teams' ),
+            'supports'           => array( 'title', 'author', 'thumbnail', 'custom-fields'),
+        );
+
+
+        register_post_type('teams', $args);
+    }
+
+    add_action('init', 'halim_teams_custom_posts');
+
+ }

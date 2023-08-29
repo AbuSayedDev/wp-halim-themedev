@@ -326,52 +326,82 @@ get_header(); ?>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vitae dicta, hic sapiente sit perspiciatis modi officiis inventore architecto minima.</p>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-4">
+
+                    
+            <?php
+
+                $args = array(
+                    'post_type'      => 'teams',
+                    'post_per_pages'  => 6
+                );
+
+                $query = new WP_Query($args);
+
+                while($query -> have_posts()){
+                    $query -> the_post();
+
+            ?>
+
+
+                <div class="col-md-4">  
                     <div class="single-team">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/team/1.jpg" alt="">
+                        <img src="<?php the_post_thumbnail_url();?>">
                         <div class="team-content">
-                            <h4>john doe <span>web developer</span></h4>
+                            <h4><?php the_title(); ?><span><?php the_field('team_designation'); ?></span></h4>
                             <div class="team-con">
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a href=""><i class="fab fa-youtube"></i></a>
+
+                            <?php 
+                                if(get_field('team_facebook')){
+                                ?>
+                                    <a href="<?php the_field('team_facebook'); ?>"><i class="fab fa-facebook-f "></i></a>
+
+                              <?php  }
+                            ?>
+
+                            <?php 
+                                if(get_field('team_twitter')){
+                                ?>
+                                    <a href="<?php the_field('team_twitter'); ?>"><i class="fab fa-twitter"></i></a>
+
+                              <?php  }
+                            ?>
+
+                            <?php 
+                                if(get_field('team_instagram')){
+                                ?>
+                                    <a href="<?php the_field('team_instagram'); ?>"><i class="fab fa-instagram"></i></a>
+
+                              <?php  }
+                            ?>
+
+
+                            <?php 
+                                if(get_field('team_linkedin')){
+                                ?>
+                                    <a href="<?php the_field('team_linkedin'); ?>"><i class="fab fa-linkedin-in"></i></a>
+
+                              <?php  }
+                            ?>
+
+                            <?php 
+                                if(get_field('team_youtube')){
+                                ?>
+                                    <a href="<?php the_field('team_youtube'); ?>"><i class="fab fa-youtube"></i></a>
+
+                              <?php  }
+                            ?>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="single-team">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/team/2.jpg" alt="">
-                        <div class="team-content">
-                            <h4>john doe <span>web developer</span></h4>
-                            <div class="team-con">
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a href=""><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-team">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/team/3.jpg" alt="">
-                        <div class="team-content">
-                            <h4>john doe <span>web developer</span></h4>
-                            <div class="team-con">
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a href=""><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+             <?php   }
+            
+                wp_reset_postdata();
+            ?>
+
             </div>
         </div>
     </section>
