@@ -14,7 +14,8 @@ get_header(); ?>
         <?php 
             $args = array(
                 'post_type'      => 'slider',
-                'post_per_pages' => 3
+                // 'posts_per_page' => 3,
+                'order' => 'DESC',
             );
 
             $query = new WP_Query($args);
@@ -250,7 +251,8 @@ get_header(); ?>
 
                 $args = array(
                     'post_type'      => 'service',
-                    'post_per_pages' => 6
+                    'posts_per_page' => 6,
+                    'order' => 'DESC'
                 );
 
                 $query = new WP_Query($args);
@@ -287,7 +289,8 @@ get_header(); ?>
                 
                 $args = array(
                     'post_type'     => 'counters',
-                    'post_per_pages' => 4
+                    'posts_per_page' => 4,
+                    'order' => 'DESC'
                 );
 
                 $query = new WP_Query($args);
@@ -334,7 +337,8 @@ get_header(); ?>
 
                 $args = array(
                     'post_type'      => 'teams',
-                    'post_per_pages'  => 6
+                    'posts_per_page'  => 6,
+                    'order' => 'DESC'
                 );
 
                 $query = new WP_Query($args);
@@ -347,7 +351,9 @@ get_header(); ?>
 
                 <div class="col-md-4">  
                     <div class="single-team">
+                        
                         <img src="<?php the_post_thumbnail_url();?>">
+
                         <div class="team-content">
                             <h4><?php the_title(); ?><span><?php the_field('team_designation'); ?></span></h4>
                             <div class="team-con">
@@ -421,28 +427,35 @@ get_header(); ?>
             </div>
             <div class="row">
                 <div class="testimonials owl-carousel">
-                    <div class="single-testimonial">
-                        <div>
-                            <img src="<?php echo get_template_directory_uri();?>/assets/images/testimonilas/01.png" alt="">
+
+
+                <?php 
+
+                    $args = array(
+                        'post_type' => 'testimonials',
+                        'order' => 'DESC'
+                    );
+
+                    $query = new WP_Query($args);
+
+                    while($query-> have_posts()){
+                        $query -> the_post();
+
+                    ?>
+
+                        <div class="single-testimonial">
+                            <?php the_post_thumbnail()?>
+                            <?php the_content(); ?>
+                            <h4><?php the_title(); ?> <span><?php the_field('testimonial_designation'); ?></span></h4>
                         </div>
-                        <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
-                        <h4>john doe <span>web developer</span></h4>
-                    </div>
-                    <div class="single-testimonial">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/testimonilas/02.png" alt="">
-                        <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
-                        <h4>john doe <span>web developer</span></h4>
-                    </div>
-                    <div class="single-testimonial">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/testimonilas/03.png" alt="">
-                        <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
-                        <h4>john doe <span>web developer</span></h4>
-                    </div>
-                    <div class="single-testimonial">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/testimonilas/04.png" alt="">
-                        <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda culpa cumque dicta sint soluta voluptas eius iusto modi reprehenderit sint soluta voluptas. "</p>
-                        <h4>john doe <span>web developer</span></h4>
-                    </div>
+
+
+                    <?php }
+
+                        wp_reset_postdata();
+                
+                    ?>
+
                 </div>
             </div>
         </div>

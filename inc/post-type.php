@@ -247,3 +247,67 @@
     add_action('init', 'halim_teams_custom_posts');
 
  }
+
+
+ /**
+ * Register a custom post type called "Testimonials".
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+
+ if(! function_exists('halim_testimonials_custom_posts')){
+
+    function halim_testimonials_custom_posts(){
+        $labels = array(
+            'name'                  => __( 'Testimonials', 'wphalimtheme' ),
+            'singular_name'         => __( 'Testimonial', 'wphalimtheme' ),
+            'menu_name'             => __( 'Testimonials', 'wphalimtheme' ),
+            'name_admin_bar'        => __( 'Testimonial', 'wphalimtheme' ),
+            'add_new'               => __( 'Add New', 'wphalimtheme' ),
+            'add_new_item'          => __( 'Add New Testimonial', 'wphalimtheme' ),
+            'new_item'              => __( 'New Testimonial', 'wphalimtheme' ),
+            'edit_item'             => __( 'Edit Testimonial', 'wphalimtheme' ),
+            'view_item'             => __( 'View Testimonial', 'wphalimtheme' ),
+            'all_items'             => __( 'All Testimonials', 'wphalimtheme' ),
+            'search_items'          => __( 'Search Testimonials', 'wphalimtheme' ),
+            'parent_item_colon'     => __( 'Parent Testimonials:', 'wphalimtheme' ),
+            'not_found'             => __( 'No Testimonials found.', 'wphalimtheme' ),
+            'not_found_in_trash'    => __( 'No Testimonials found in Trash.', 'wphalimtheme' ),
+            'featured_image'        => __( 'Testimonial Cover Image', 'wphalimtheme' ),
+            'set_featured_image'    => __( 'Set cover image', 'wphalimtheme' ),
+            'remove_featured_image' => __( 'Remove cover image', 'wphalimtheme' ),
+            'use_featured_image'    => __( 'Use as cover image', 'wphalimtheme' ),
+            'archives'              => __( 'Testimonials archives', 'wphalimtheme' ),
+            'insert_into_item'      => __( 'Insert into Testimonial','wphalimtheme' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Testimonial', 'wphalimtheme' ),
+            'filter_items_list'     => __( 'Filter Testimonials list', 'wphalimtheme' ),
+            'items_list_navigation' => __( 'Testimonials list navigation', 'wphalimtheme' ),
+            'items_list'            => __( 'Testimonials list', 'wphalimtheme' ),
+
+        );
+
+        $args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_in_menu'       => true,
+            'show_ui'            => true,
+            'show_in_rest'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'rewrite'            => array( 'slug' => 'testimonials' ),
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields'),
+        );
+
+
+        register_post_type('testimonials', $args);
+    }
+
+    add_action('init', 'halim_testimonials_custom_posts');
+
+ }
+
+
