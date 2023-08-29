@@ -281,30 +281,34 @@ get_header(); ?>
     <section class="counter-area">
         <div class="container-fluid g-0">
             <div class="row g-0">
+
+
+            <?php
+                
+                $args = array(
+                    'post_type'     => 'counters',
+                    'post_per_pages' => 4
+                );
+
+                $query = new WP_Query($args);
+
+                while($query -> have_posts()){
+                    $query -> the_post();
+
+                ?>
+
                 <div class="col-xxl-3 col-sm-6">
                     <div class="single-counter">
-                        <i class="fas fa-user"></i>
-                        <h4><span class="counter">567</span>customers</h4>
+                        <i class="<?php the_field('counter_icon'); ?>"></i>
+                        <h4><span class="counter"><?php the_field('counter_number'); ?></span><?php the_title(); ?></h4>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-sm-6">
-                    <div class="single-counter">
-                        <i class="fas fa-code"></i>
-                        <h4><span class="counter">50,000</span>line of codes</h4>
-                    </div>
-                </div>
-                <div class="col-xxl-3 col-sm-6">
-                    <div class="single-counter">
-                        <i class="far fa-file"></i>
-                        <h4><span class="counter">45</span>projects completed</h4>
-                    </div>
-                </div>
-                <div class="col-xxl-3 col-sm-6">
-                    <div class="single-counter">
-                        <i class="fas fa-coffee"></i>
-                        <h4><span class="counter">2,000</span>cup of coffees</h4>
-                    </div>
-                </div>
+
+              <?php  }
+
+                wp_reset_postdata();
+                
+            ?>
             </div>
         </div>
     </section>

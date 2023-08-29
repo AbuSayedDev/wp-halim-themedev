@@ -6,9 +6,9 @@
  * @see get_post_type_labels() for label keys.
  */
 
- if(! function_exists('halim_slider_custom_posts')){
+ if(! function_exists('halim_sliders_custom_posts')){
 
-    function halim_slider_custom_posts(){
+    function halim_sliders_custom_posts(){
         $labels = array(
             'name'                  => __( 'Sliders', 'wphalimtheme' ),
             'singular_name'         => __( 'Slider', 'wphalimtheme' ),
@@ -58,7 +58,7 @@
         register_post_type('slider', $args);
     }
 
-    add_action('init', 'halim_slider_custom_posts');
+    add_action('init', 'halim_sliders_custom_posts');
 
  }
 
@@ -69,9 +69,9 @@
  * @see get_post_type_labels() for label keys.
  */
 
- if(! function_exists('halim_service_custom_posts')){
+ if(! function_exists('halim_services_custom_posts')){
 
-    function halim_service_custom_posts(){
+    function halim_services_custom_posts(){
         $labels = array(
             'name'                  => __( 'Services', 'wphalimtheme' ),
             'singular_name'         => __( 'Service', 'wphalimtheme' ),
@@ -120,6 +120,68 @@
         register_post_type('service', $args);
     }
 
-    add_action('init', 'halim_service_custom_posts');
+    add_action('init', 'halim_services_custom_posts');
+
+ }
+
+
+ /**
+ * Register a custom post type called "Counters".
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+
+ if(! function_exists('halim_counters_custom_posts')){
+
+    function halim_counters_custom_posts(){
+        $labels = array(
+            'name'                  => __( 'Counters', 'wphalimtheme' ),
+            'singular_name'         => __( 'Counter', 'wphalimtheme' ),
+            'menu_name'             => __( 'Counters', 'wphalimtheme' ),
+            'name_admin_bar'        => __( 'Counter', 'wphalimtheme' ),
+            'add_new'               => __( 'Add New', 'wphalimtheme' ),
+            'add_new_item'          => __( 'Add New Counter', 'wphalimtheme' ),
+            'new_item'              => __( 'New Counter', 'wphalimtheme' ),
+            'edit_item'             => __( 'Edit Counter', 'wphalimtheme' ),
+            'view_item'             => __( 'View Counter', 'wphalimtheme' ),
+            'all_items'             => __( 'All Counters', 'wphalimtheme' ),
+            'search_items'          => __( 'Search Counters', 'wphalimtheme' ),
+            'parent_item_colon'     => __( 'Parent Counters:', 'wphalimtheme' ),
+            'not_found'             => __( 'No Counters found.', 'wphalimtheme' ),
+            'not_found_in_trash'    => __( 'No Counters found in Trash.', 'wphalimtheme' ),
+            'featured_image'        => __( 'Counter Cover Image', 'wphalimtheme' ),
+            'set_featured_image'    => __( 'Set cover image', 'wphalimtheme' ),
+            'remove_featured_image' => __( 'Remove cover image', 'wphalimtheme' ),
+            'use_featured_image'    => __( 'Use as cover image', 'wphalimtheme' ),
+            'archives'              => __( 'Counters archives', 'wphalimtheme' ),
+            'insert_into_item'      => __( 'Insert into Counter','wphalimtheme' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Counter', 'wphalimtheme' ),
+            'filter_items_list'     => __( 'Filter Counters list', 'wphalimtheme' ),
+            'items_list_navigation' => __( 'Counters list navigation', 'wphalimtheme' ),
+            'items_list'            => __( 'Counters list', 'wphalimtheme' ),
+
+        );
+
+        $args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_in_menu'       => true,
+            'show_ui'            => true,
+            'show_in_rest'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'rewrite'            => array( 'slug' => 'counters' ),
+            'supports'           => array( 'title', 'author', 'custom-fields'),
+        );
+
+
+        register_post_type('counters', $args);
+    }
+
+    add_action('init', 'halim_counters_custom_posts');
 
  }
