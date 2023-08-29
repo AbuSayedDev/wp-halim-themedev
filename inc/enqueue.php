@@ -23,6 +23,9 @@ if( ! function_exists('halim_theme_scripts')){
     
         // Googleapis Font Awesome CSS
         wp_enqueue_style( 'Googleapis_fontawesome_css', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', '1.0.0', 'all');
+        
+        // CDN Font Awesome CSS
+        wp_enqueue_style( 'cdn_fontawesome_css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css', '1.0.0', 'all');
     
         // Owl Carousel Main CSS
         wp_enqueue_style( 'owlcarousel_css', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), '1.0.0', 'all');

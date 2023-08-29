@@ -259,12 +259,11 @@ get_header(); ?>
                     $query -> the_post();
 
                 ?>
-
                     <div class="col-xl-4 col-lg-6">
                         <div class="single-service">
-                            <i class="fas fa-flag"></i>
-                            <h4>branding</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas perferendis, deserunt quos ratione maxime doloribus asperiores hic obcaecati praesentium libero!</p>
+                            <i class="<?php the_field('service_icon'); ?>"></i>
+                            <h4><?php the_title(); ?></h4>
+                            <?php the_content(); ?>
                         </div>
                     </div>
 
