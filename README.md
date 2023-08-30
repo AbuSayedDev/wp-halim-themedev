@@ -18,6 +18,14 @@ Convert HTML to WordPress Theme
 - **HTML5**
 - **CSS3**
 
+
+### Must Plugin Use:
+
+- **Advanced Custom Fields**
+- **Advanced Custom Fields PRO**
+
+
+
 ### Home, Blog, Blog Single page
 
 ![blog-blog-single](https://github.com/AbuSayedDev/wp-halim-themedev/assets/48875366/0ad51c07-3abe-456c-96d4-8376cd5a902c)

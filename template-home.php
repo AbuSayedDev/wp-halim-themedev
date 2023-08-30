@@ -490,7 +490,7 @@ get_header(); ?>
                 if($query -> have_posts()){
                     while($query -> have_posts()){
                         $query -> the_post();
-
+                        
                     ?>
 
                     <div class="col-md-4">
