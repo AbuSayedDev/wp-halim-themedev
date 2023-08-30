@@ -23,6 +23,7 @@ Convert HTML to WordPress Theme
 
 - **Advanced Custom Fields**
 - **Advanced Custom Fields PRO**
+- **Advanced Custom Fields: Font Awesome**
 
 
 

@@ -14,17 +14,37 @@
         <div class="row">
             <div class="col-md-6 col-sm-7">
                 <div class="top-left">
-                    <a href="mailto:info@halim.com"><i class="far fa-envelope"></i> info@halim.com</a>
-                    <a href="tel:+123456789"><i class="fas fa-phone-alt"></i> +123456789</a>
+
+                    <?php
+
+                        $email = get_field('email', 'option');
+                        $phone = get_field('phone', 'option');
+
+                        if($email) {?>
+                            <a href="mailto:<?php echo $email; ?>"><i class="far fa-envelope"></i> <?php echo $email; ?></a>
+                       <?php }
+                        
+                        if($phone) { ?>
+                            <a href="tel:<?php echo $phone; ?>"><i class="fas fa-phone-alt"></i> <?php echo $phone; ?></a>
+                      <?php  }
+
+                    ?>
+                
                 </div>
             </div>
             <div class="col-md-6 col-sm-5">
                 <div class="top-social">
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                    <a href=""><i class="fab fa-twitter"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a href=""><i class="fab fa-youtube"></i></a>
+
+                <?php
+
+                    $socials = get_field('header_social', 'option');
+
+                    foreach($socials as $social) {?>
+
+                        <a href="<?php echo $social['social_icon_link'] ?>"><i class="<?php echo $social['social_icon'] ?>"></i></a>
+
+                    <?php } 
+                ?>
                 </div>
             </div>
         </div>
