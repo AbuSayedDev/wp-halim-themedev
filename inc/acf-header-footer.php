@@ -11,14 +11,14 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Header Top Option',
-        'menu_title'    => 'Header Top',
+        'page_title'    => 'Theme Header Top Option', 'wphalimtheme',
+        'menu_title'    => 'Header Top', 'wphalimtheme',
         'parent_slug'   => 'halim_theme_option',
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Footer',
-        'menu_title'    => 'Footer',
+        'page_title'    => 'Theme About Us', 'wphalimtheme',
+        'menu_title'    => 'About Us', 'wphalimtheme',
         'parent_slug'   => 'halim_theme_option',
     ));
 
