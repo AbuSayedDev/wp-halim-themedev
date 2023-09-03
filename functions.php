@@ -12,10 +12,8 @@ include_once('inc/theme-setup.php');
 // Register a custom post type
 include_once('inc/post-type.php');
 
-
-
 // Registering ACF Options Pages
-include_once('inc/acf-header-footer.php');
+include_once('inc/acf-function.php');
 
 
 

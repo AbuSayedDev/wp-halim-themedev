@@ -2,13 +2,35 @@
 <section class="cta-area">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6">
-                <h4>best solution for your business</h4>
-                <p>the can be used on larger scale projectss as well as small scale projectss</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <a href="" class="box-btn">contact us <i class="fas fa-angle-double-right"></i></a>
-            </div>
+
+            <?php
+
+                $cta_setting = get_field('cta_setting', 'option'); 
+                $cta_button = $cta_setting['cta_button'];
+
+            ?>
+                <div class="col-md-6">
+                    <h4><?php echo $cta_setting['cta_title']; ?></h4>
+                    <?php echo $cta_setting['cta_descriptions']; ?>
+                </div>
+
+                <div class="col-md-6 text-center">
+                    <?php 
+                        if( $cta_button ){ ?>
+
+                            <a href="<?php echo $cta_setting['cta_button_url']; ?>" class="box-btn"><?php echo $cta_button ; ?> <i class="fas fa-angle-double-right"></i></a>
+
+                    <?php }else{?>
+
+                        <span>Please Add to CTA Button</span>
+                  <?php  }
+
+                    ?>
+                    
+                </div>
+
+            <?php ?>
+
         </div>
     </div>
 </section>

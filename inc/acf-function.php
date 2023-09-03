@@ -28,6 +28,12 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug'   => 'halim_theme_option',
     ));
 
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme CTA Setting', 'wphalimtheme',
+        'menu_title'    => 'CTA Setting', 'wphalimtheme',
+        'parent_slug'   => 'halim_theme_option',
+    ));
+
 }
 
 
