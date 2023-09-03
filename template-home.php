@@ -148,95 +148,63 @@ get_header(); ?>
             <div class="row">
                 <div class="col-xl-6">
                     <div class="skill-title">
-                        <h4>faq</h4>
+                        <h4><?php the_field('faq_title', 'option'); ?></h4>
                     </div>
                     <div class="skill-accordion">
                         <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Lorem Ipsum is simply 1
-                                </button>
-                              </h2>
-                              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Lorem Ipsum is simply 2
-                                </button>
-                              </h2>
-                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Lorem Ipsum is simply 3
-                                </button>
-                              </h2>
-                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                      Lorem Ipsum is simply 4
-                                  </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                  <div class="accordion-body">
-                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                  </div>
-                                </div>
-                              </div>
+
+                            <?php 
+
+                                $faqs = get_field('faqs', 'option');
+                                $i = 0;
+
+                                foreach($faqs as $faq){
+                                    $i++
+                                ?>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="heading<?php echo $i; ?>">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
+                                                <?php echo $faq['title']; ?>
+                                            </button>
+                                        </h2>
+                                        <div id="collapse<?php echo $i; ?>" class="accordion-collapse collapse <?php if($i == 1){echo 'show'; }?>" aria-labelledby="heading<?php echo $i; ?>" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <?php echo $faq['description']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <?php }
+                            ?>
+
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xl-6 mt-5 mt-xl-0">
                     <div class="skill-title">
-                        <h4>our skills</h4>
+                        <h4><?php the_field('skills_title', 'option'); ?></h4>
                     </div>
-                    <div class="single-progress">
-                        <h4>html</h4>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 92%;" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">92%</div>
+
+                    <?php 
+                    
+                        $skills = get_field('skills', 'option');
+
+                        foreach($skills as $skill){
+                        
+                        ?>
+
+                        <div class="single-progress">
+                            <h4><?php echo $skill['title']; ?></h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: <?php echo $skill['number']; ?>%;" aria-valuenow="<?php echo $skill['number']; ?>" aria-valuemin="0" aria-valuemax="100"><?php echo $skill['number']; ?>%</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="single-progress">
-                        <h4>css</h4>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 84%;" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">84%</div>
-                        </div>
-                    </div>
-                    <div class="single-progress">
-                        <h4>photoshop</h4>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-                        </div>
-                    </div>
-                    <div class="single-progress">
-                        <h4>wordpress</h4>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 77%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">77%</div>
-                        </div>
-                    </div>
-                    <div class="single-progress">
-                        <h4>seo</h4>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-                        </div>
-                    </div>
+
+                      <?php  }
+
+                    ?>
                 </div>
             </div>
         </div>
