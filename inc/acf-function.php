@@ -29,6 +29,32 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Our Services', 'wphalimtheme',
+        'menu_title'    => 'Our Services Heading', 'wphalimtheme',
+        'parent_slug'   => 'halim_theme_option',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Creative Team', 'wphalimtheme',
+        'menu_title'    => 'Creative Team Heading', 'wphalimtheme',
+        'parent_slug'   => 'halim_theme_option',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme What Clients Say', 'wphalimtheme',
+        'menu_title'    => 'What Clients Say Heading', 'wphalimtheme',
+        'parent_slug'   => 'halim_theme_option',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Latest News', 'wphalimtheme',
+        'menu_title'    => 'Latest News Heading', 'wphalimtheme',
+        'parent_slug'   => 'halim_theme_option',
+    ));
+
+
+
+    acf_add_options_sub_page(array(
         'page_title'    => 'Theme Faq and Skills ', 'wphalimtheme',
         'menu_title'    => 'Faq and Skills', 'wphalimtheme',
         'parent_slug'   => 'halim_theme_option',

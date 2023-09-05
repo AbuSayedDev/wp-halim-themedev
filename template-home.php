@@ -216,12 +216,19 @@ get_header(); ?>
         <div class="container">
 
             <div class="row section-title align-items-center">
+
+            <?php 
+
+                $our_services_heading = get_field('our_services_heading', 'option');
+            ?>
+
                 <div class="col-md-6 text-md-end text-sm-center">
-                    <span>who we are?</span>
-                    <h4>our services</h4>
+                    <span><?php echo $our_services_heading['our_services_subtitle']; ?></span>
+                    <h4><?php echo $our_services_heading['our_services_title']; ?></h4>
                 </div>
+                
                 <div class="col-md-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vitae dicta, hic sapiente sit perspiciatis modi officiis inventore architecto minima.</p>
+                    <?php echo $our_services_heading['our_services_description']; ?>
                 </div>
             </div>
 
