@@ -411,13 +411,23 @@ get_header(); ?>
     <section class="testimonials-area pt-100 pb-100 bg" style="background-image: url('<?php echo get_template_directory_uri();?>./assets/images/testi_back.jpg');">
         <div class="container-fluid">
             <div class="row section-title align-items-center">
+
+            <?php 
+
+                $clients_say_heading = get_field('clients_say_heading', 'option');
+            ?>
+
+
                 <div class="col-md-6 text-md-end text-sm-center">
-                    <span>who we are?</span>
-                    <h4>what clients say?</h4>
+                    <span><?php echo $clients_say_heading['subtitle'];?></span>
+                    <h4><?php echo $clients_say_heading['title'];?></h4>
                 </div>
+
                 <div class="col-md-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vitae dicta, hic sapiente sit perspiciatis modi officiis inventore architecto minima.</p>
+                    <?php echo $clients_say_heading['descriptions'];?>
                 </div>
+
+
             </div>
             <div class="row">
                 <div class="testimonials owl-carousel">

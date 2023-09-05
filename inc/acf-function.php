@@ -41,8 +41,8 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
-        'page_title'    => 'Theme What Clients Say', 'wphalimtheme',
-        'menu_title'    => 'What Clients Say Heading', 'wphalimtheme',
+        'page_title'    => 'Theme Clients Say', 'wphalimtheme',
+        'menu_title'    => 'Clients Say Heading', 'wphalimtheme',
         'parent_slug'   => 'halim_theme_option',
     ));
 
