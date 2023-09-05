@@ -223,12 +223,12 @@ get_header(); ?>
             ?>
 
                 <div class="col-md-6 text-md-end text-sm-center">
-                    <span><?php echo $our_services_heading['our_services_subtitle']; ?></span>
-                    <h4><?php echo $our_services_heading['our_services_title']; ?></h4>
+                    <span><?php echo $our_services_heading['subtitle']; ?></span>
+                    <h4><?php echo $our_services_heading['title']; ?></h4>
                 </div>
-                
+
                 <div class="col-md-6">
-                    <?php echo $our_services_heading['our_services_description']; ?>
+                    <?php echo $our_services_heading['description']; ?>
                 </div>
             </div>
 
@@ -308,12 +308,19 @@ get_header(); ?>
     <section class="team-area pt-100 pb-100">
         <div class="container">
             <div class="row section-title align-items-center">
+
+            <?php 
+
+                $creative_team_heading = get_field('creative_team_heading', 'option');
+            ?>
+
                 <div class="col-md-6 text-md-end text-sm-center">
-                    <span>who we are?</span>
-                    <h4>creative team</h4>
+                    <span><?php echo $creative_team_heading['subtitle']; ?></span>
+                    <h4><?php echo $creative_team_heading['title']; ?></h4>
                 </div>
+
                 <div class="col-md-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo vitae dicta, hic sapiente sit perspiciatis modi officiis inventore architecto minima.</p>
+                    <?php echo $creative_team_heading['description']; ?>
                 </div>
             </div>
 
