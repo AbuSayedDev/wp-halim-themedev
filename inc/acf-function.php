@@ -17,6 +17,12 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer', 'wphalimtheme',
+        'menu_title'    => 'Footer', 'wphalimtheme',
+        'parent_slug'   => 'halim_theme_option',
+    ));
+
+    acf_add_options_sub_page(array(
         'page_title'    => 'Theme About Us', 'wphalimtheme',
         'menu_title'    => 'About Us', 'wphalimtheme',
         'parent_slug'   => 'halim_theme_option',
