@@ -301,7 +301,7 @@
             'rewrite'            => array( 'slug' => 'testimonials' ),
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields'),
         );
-        
+
 
         register_taxonomy( 'testimonials-cat', 'testimonials', array(
             'lables' => array(
@@ -371,7 +371,7 @@
             'hierarchical'       => false,
             'menu_position'      => null,
             'rewrite'            => array( 'slug' => 'portfolios' ),
-            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields'),
+            'supports'           => array( 'title', 'thumbnail', 'custom-fields'),
         );
 
 

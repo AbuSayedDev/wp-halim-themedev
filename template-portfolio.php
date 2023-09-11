@@ -11,10 +11,10 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12 text-center">
-                    <h4>portfolio</h4>
+                    <h4><?php the_title(); ?></h4>
                     <ul>
-                        <li><a href="">home</a></li> / 
-                        <li>portfolio</li>
+                        <li><a href="<?php echo site_url( ); ?>">home</a></li> / 
+                        <li><?php the_title(); ?></li>
                     </ul>
                 </div>
             </div>
@@ -29,69 +29,86 @@ get_header(); ?>
                 <div class="col-xxl-12">
                     <ul class="portfolio-menu">
                         <li class="active" data-filter="*">All</li>
-                        <li data-filter=".business">business</li>
-                        <li data-filter=".finance">finance</li>
-                        <li data-filter=".marketing">marketing</li>
-                        <li data-filter=".idea">idea</li>
+
+                        <?php
+                            $cats = get_terms('portfolios-cat');
+
+                            foreach($cats as $cat){?>
+                            
+                                <li data-filter=".<?php echo $cat->slug; ?>"><?php echo $cat->name; ?></li>
+
+                          <?php  }
+                        ?>
                     </ul>
                 </div>
             </div>
             <div class="row g-0 portfolio-items">
-                <div class="col-md-4 business finance">
-                    <div class="single-portfolio">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/01.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-link"></i>
-                            <h4>portfolio name <span>branding</span></h4>
+
+            <?php 
+
+                // $portfolio_designation = the_field('portfolio_designation');
+                // $portfolio_icon = get_field('portfolio_icon');
+                // $portfolio_icon_url = get_field('portfolio_icon_url');
+
+                $args = array(
+                    'post_type'      => 'portfolios',
+                    'posts_per_page' => 10,
+                    'order'          => 'DESC',
+                );
+
+                $query = new WP_Query($args);
+
+                if($query->have_posts()){
+                    while($query->have_posts()){
+                        $query->the_post();
+                    ?>
+
+                    <div class="col-md-4 
+
+                        <?php
+                            $post_cats = get_the_terms(get_the_ID(), 'portfolios-cat');
+                            foreach($post_cats as $post_cat){
+                                echo $post_cat->slug. ' ';
+                            }
+                        ?> ">
+                        <div class="single-portfolio">
+                            <?php echo the_post_thumbnail(); ?>
+                            <div class="portfolio-overlay">
+
+                            <?php 
+                                if(get_field('portfolio_icon')){ ?>
+
+                                    <a href="<?php the_field('portfolio_icon_url'); ?>" target="_blink"><i class="<?php the_field('portfolio_icon'); ?>"></i></a>
+                              
+                              <?php  }else{
+                                    
+                                }
+                            ?>
+
+                                
+                                
+
+                                <h4><?php the_title(); ?> <span><?php the_field('portfolio_designation'); ?></span></h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 marketing idea">
-                    <div class="single-portfolio">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/02.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-link"></i>
-                            <h4>portfolio name <span>branding</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 business finance idea">
-                    <div class="single-portfolio">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/03.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-link"></i>
-                            <h4>portfolio name <span>branding</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 idea">
-                    <div class="single-portfolio">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/04.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-link"></i>
-                            <h4>portfolio name <span>branding</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 marketing finance">
-                    <div class="single-portfolio">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/05.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-link"></i>
-                            <h4>portfolio name <span>branding</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 idea finance">
-                    <div class="single-portfolio">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/images/portfolio/06.jpg" alt="">
-                        <div class="portfolio-overlay">
-                            <i class="fas fa-link"></i>
-                            <h4>portfolio name <span>branding</span></h4>
-                        </div>
-                    </div>
-                </div>
+
+                <?php    }
+
+                }else{?>
+                    <p>No Portfolio Post</p>
+              <?php  
+                
+                wp_reset_postdata();
+            }
+            
+            ?>
+
             </div>
+
+            <!-- <pre>
+                <?php print_r($portfolio_designation); ?>
+            </pre> -->
         </div>
     </section>
     <!-- Portfolio Area End Here -->
