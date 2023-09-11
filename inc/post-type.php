@@ -301,6 +301,17 @@
             'rewrite'            => array( 'slug' => 'testimonials' ),
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields'),
         );
+        
+
+        register_taxonomy( 'testimonials-cat', 'testimonials', array(
+            'lables' => array(
+                'name'              => __('testimonials', 'wphalimtheme'),
+                'singular_name'     => __( 'testimonial', 'wphalimtheme' ),
+            ),
+
+            'hierarchical'      => true,
+            'show_admin_column' => true,
+        ) );
 
 
         register_post_type('testimonials', $args);
@@ -310,4 +321,78 @@
 
  }
 
+  /**
+ * Register a custom post type called "Portfolio".
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+
+ if(! function_exists('halim_portfolios_custom_posts')){
+
+    function halim_portfolios_custom_posts(){
+        $labels = array(
+            'name'                  => __( 'Portfolios', 'wphalimtheme' ),
+            'singular_name'         => __( 'Portfolio', 'wphalimtheme' ),
+            'menu_name'             => __( 'Portfolios', 'wphalimtheme' ),
+            'name_admin_bar'        => __( 'Portfolio', 'wphalimtheme' ),
+            'add_new'               => __( 'Add New', 'wphalimtheme' ),
+            'add_new_item'          => __( 'Add New Portfolio', 'wphalimtheme' ),
+            'new_item'              => __( 'New Portfolio', 'wphalimtheme' ),
+            'edit_item'             => __( 'Edit Portfolio', 'wphalimtheme' ),
+            'view_item'             => __( 'View Portfolio', 'wphalimtheme' ),
+            'all_items'             => __( 'All Portfolios', 'wphalimtheme' ),
+            'search_items'          => __( 'Search Portfolios', 'wphalimtheme' ),
+            'parent_item_colon'     => __( 'Parent Portfolios:', 'wphalimtheme' ),
+            'not_found'             => __( 'No Portfolios found.', 'wphalimtheme' ),
+            'not_found_in_trash'    => __( 'No Portfolios found in Trash.', 'wphalimtheme' ),
+            'featured_image'        => __( 'Portfolio Cover Image', 'wphalimtheme' ),
+            'set_featured_image'    => __( 'Set cover image', 'wphalimtheme' ),
+            'remove_featured_image' => __( 'Remove cover image', 'wphalimtheme' ),
+            'use_featured_image'    => __( 'Use as cover image', 'wphalimtheme' ),
+            'archives'              => __( 'Portfolios archives', 'wphalimtheme' ),
+            'insert_into_item'      => __( 'Insert into Portfolio','wphalimtheme' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Portfolio', 'wphalimtheme' ),
+            'filter_items_list'     => __( 'Filter Portfolios list', 'wphalimtheme' ),
+            'items_list_navigation' => __( 'Portfolios list navigation', 'wphalimtheme' ),
+            'items_list'            => __( 'Portfolios list', 'wphalimtheme' ),
+
+        );
+
+        $args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_in_menu'       => true,
+            'show_ui'            => true,
+            'show_in_rest'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'rewrite'            => array( 'slug' => 'portfolios' ),
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields'),
+        );
+
+
+
+        register_taxonomy( 'portfolios-cat', 'portfolios', array(
+            'lables' => array(
+                'name'              => __('Categories', 'wphalimtheme'),
+                'singular_name'     => __( 'Categorie', 'wphalimtheme' ),
+            ),
+
+            'hierarchical'      => true,
+            'show_admin_column' => true,
+        ) );
+
+
+
+
+        register_post_type('portfolios', $args);
+    }
+
+    add_action('init', 'halim_portfolios_custom_posts');
+
+ }
 
