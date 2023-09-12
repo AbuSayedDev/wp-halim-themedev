@@ -321,7 +321,7 @@
 
  }
 
-  /**
+/**
  * Register a custom post type called "Portfolio".
  *
  * @see get_post_type_labels() for label keys.
@@ -396,3 +396,62 @@
 
  }
 
+/**
+ * Register a custom post type called "Gallery".
+ *
+ * @see get_post_type_labels() for label keys.
+ */
+
+ if(! function_exists('halim_gallery_custom_posts')){
+
+    function halim_gallery_custom_posts(){
+        $labels = array(
+            'name'                  => __( 'Gallerys', 'wphalimtheme' ),
+            'singular_name'         => __( 'Gallerys', 'wphalimtheme' ),
+            'menu_name'             => __( 'Gallerys', 'wphalimtheme' ),
+            'name_admin_bar'        => __( 'Gallery', 'wphalimtheme' ),
+            'add_new'               => __( 'Add New', 'wphalimtheme' ),
+            'add_new_item'          => __( 'Add New Gallery', 'wphalimtheme' ),
+            'new_item'              => __( 'New Gallery', 'wphalimtheme' ),
+            'edit_item'             => __( 'Edit Gallery', 'wphalimtheme' ),
+            'view_item'             => __( 'View Gallery', 'wphalimtheme' ),
+            'all_items'             => __( 'All Gallerys', 'wphalimtheme' ),
+            'search_items'          => __( 'Search Gallerys', 'wphalimtheme' ),
+            'parent_item_colon'     => __( 'Parent Gallerys:', 'wphalimtheme' ),
+            'not_found'             => __( 'No Gallerys found.', 'wphalimtheme' ),
+            'not_found_in_trash'    => __( 'No Gallerys found in Trash.', 'wphalimtheme' ),
+            'featured_image'        => __( 'Gallery Cover Image', 'wphalimtheme' ),
+            'set_featured_image'    => __( 'Set cover image', 'wphalimtheme' ),
+            'remove_featured_image' => __( 'Remove cover image', 'wphalimtheme' ),
+            'use_featured_image'    => __( 'Use as cover image', 'wphalimtheme' ),
+            'archives'              => __( 'Gallerys archives', 'wphalimtheme' ),
+            'insert_into_item'      => __( 'Insert into Gallery','wphalimtheme' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this Gallery', 'wphalimtheme' ),
+            'filter_items_list'     => __( 'Filter Gallerys list', 'wphalimtheme' ),
+            'items_list_navigation' => __( 'Gallerys list navigation', 'wphalimtheme' ),
+            'items_list'            => __( 'Gallerys list', 'wphalimtheme' ),
+
+        );
+
+        $args = array(
+            'labels'             => $labels,
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_in_menu'       => true,
+            'show_ui'            => true,
+            'show_in_rest'       => true,
+            'query_var'          => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => null,
+            'rewrite'            => array( 'slug' => 'gallery' ),
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields'),
+        );
+
+        register_post_type('gallery', $args);
+    }
+
+    add_action('init', 'halim_gallery_custom_posts');
+
+ }

@@ -11,7 +11,7 @@
         add_theme_support( 'title-tag');
 
         // Thumbnails image
-        add_theme_support('post-thumbnails', array('post', 'slider', 'service', 'teams', 'testimonials', 'portfolio'));
+        add_theme_support('post-thumbnails', array('post', 'slider', 'service', 'teams', 'testimonials', 'portfolio', 'gallery'));
 
         // Textdomain Register
         load_theme_textdomain('wphalimtheme', get_template_directory() . '/languages');
