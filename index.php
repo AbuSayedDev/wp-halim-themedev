@@ -2,19 +2,9 @@
 
 
     <!-- Breadcumb Area Start Here -->
-    <section class="breadcumb-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-12 text-center">
-                    <h4>blog</h4>
-                    <ul>
-                        <li><a href="">home</a></li> / 
-                        <li>blog</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <?php get_template_part('inc/breadcumb'); ?>
+    
     <!-- Breadcumb Area End Here -->
 
     <section class="blog-page-area pt-100 pb-100">
