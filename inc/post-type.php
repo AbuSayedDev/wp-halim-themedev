@@ -371,7 +371,7 @@
             'hierarchical'       => false,
             'menu_position'      => null,
             'rewrite'            => array( 'slug' => 'portfolios' ),
-            'supports'           => array( 'title', 'thumbnail', 'custom-fields'),
+            'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields'),
         );
 
 

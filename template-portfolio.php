@@ -46,10 +46,6 @@ get_header(); ?>
 
             <?php 
 
-                // $portfolio_designation = the_field('portfolio_designation');
-                // $portfolio_icon = get_field('portfolio_icon');
-                // $portfolio_icon_url = get_field('portfolio_icon_url');
-
                 $args = array(
                     'post_type'      => 'portfolios',
                     'posts_per_page' => 10,
@@ -80,14 +76,12 @@ get_header(); ?>
 
                                     <a href="<?php the_field('portfolio_icon_url'); ?>" target="_blink"><i class="<?php the_field('portfolio_icon'); ?>"></i></a>
                               
-                              <?php  }else{
-                                    
-                                }
+                              <?php  }else{ ?>
+
+                                    <a href="<?php the_permalink(); ?>">View Details</a>
+
+                               <?php }
                             ?>
-
-                                
-                                
-
                                 <h4><?php the_title(); ?> <span><?php the_field('portfolio_designation'); ?></span></h4>
                             </div>
                         </div>
