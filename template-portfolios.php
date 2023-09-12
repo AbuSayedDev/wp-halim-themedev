@@ -1,6 +1,6 @@
 <?php 
 /*
-    Template Name: Portfolio Page
+    Template Name: Portfolios Page
 */
 
 get_header(); ?>
@@ -47,7 +47,7 @@ get_header(); ?>
             <?php 
 
                 $args = array(
-                    'post_type'      => 'portfolios',
+                    'post_type'      => 'portfolio',
                     'posts_per_page' => 10,
                     'order'          => 'DESC',
                 );
@@ -99,10 +99,6 @@ get_header(); ?>
             ?>
 
             </div>
-
-            <!-- <pre>
-                <?php print_r($portfolio_designation); ?>
-            </pre> -->
         </div>
     </section>
     <!-- Portfolio Area End Here -->

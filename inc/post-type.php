@@ -327,12 +327,12 @@
  * @see get_post_type_labels() for label keys.
  */
 
- if(! function_exists('halim_portfolios_custom_posts')){
+ if(! function_exists('halim_portfolio_custom_posts')){
 
-    function halim_portfolios_custom_posts(){
+    function halim_portfolio_custom_posts(){
         $labels = array(
             'name'                  => __( 'Portfolios', 'wphalimtheme' ),
-            'singular_name'         => __( 'Portfolio', 'wphalimtheme' ),
+            'singular_name'         => __( 'Portfolios', 'wphalimtheme' ),
             'menu_name'             => __( 'Portfolios', 'wphalimtheme' ),
             'name_admin_bar'        => __( 'Portfolio', 'wphalimtheme' ),
             'add_new'               => __( 'Add New', 'wphalimtheme' ),
@@ -370,13 +370,13 @@
             'has_archive'        => true,
             'hierarchical'       => false,
             'menu_position'      => null,
-            'rewrite'            => array( 'slug' => 'portfolios' ),
+            'rewrite'            => array( 'slug' => 'portfolio' ),
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields'),
         );
 
 
 
-        register_taxonomy( 'portfolios-cat', 'portfolios', array(
+        register_taxonomy( 'portfolios-cat', 'portfolio', array(
             'lables' => array(
                 'name'              => __('Categories', 'wphalimtheme'),
                 'singular_name'     => __( 'Categorie', 'wphalimtheme' ),
@@ -389,10 +389,10 @@
 
 
 
-        register_post_type('portfolios', $args);
+        register_post_type('portfolio', $args);
     }
 
-    add_action('init', 'halim_portfolios_custom_posts');
+    add_action('init', 'halim_portfolio_custom_posts');
 
  }
 
