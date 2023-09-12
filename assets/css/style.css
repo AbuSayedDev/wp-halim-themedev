@@ -327,7 +327,7 @@ a {
   text-transform: capitalize;
   font-size: 22px;
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   padding-bottom: 12px;
 }
 .single-about:hover i {
