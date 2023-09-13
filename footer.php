@@ -40,12 +40,14 @@
 <footer class="footer-area bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/images/footer-bg.png');">
     <div class="container">
         <div class="row">
+
             <div class="col-lg-3">
                 <div class="single-footer">
                     <h2>halim</h2>
                     <p>Lorem ipsum dolor adipisicing amet, consectetur sit elit. Aspernatur incidihil quo officia.</p>
                 </div>
             </div>
+
             <div class="col-xl-2 col-lg-3 mt-5 mt-lg-0">
                 <div class="single-footer">
                     <h4>quick links</h4>
@@ -68,6 +70,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-3 mt-5 mt-lg-0">
                 <div class="single-footer">
                     <h4>latest posts</h4>
@@ -90,6 +93,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-lg-3 mt-5 mt-sm-0">
                 <div class="single-footer">
 
@@ -117,6 +121,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- copyright -->
         <div class="row footer-bottom">
             <div class="col-sm-6">
                 <div class="footer-copy">
