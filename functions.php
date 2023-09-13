@@ -16,5 +16,9 @@ include_once('inc/post-type.php');
 include_once('inc/acf-function.php');
 
 
+// Registering ACF Options Pages
+include_once('inc/sidebar.php');
+
+
 
 

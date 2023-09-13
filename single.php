@@ -21,13 +21,11 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="blog-details">
-                        <h2>blog title</h2>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog1.jpg" alt="">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis ex aspernatur quibusdam et mollitia iure in, fugiat non tempore sapiente dolore cumque a eaque consequatur asperiores vel! Eius, nemo corrupti.</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis ex aspernatur quibusdam et mollitia iure in, fugiat non tempore sapiente dolore cumque a eaque consequatur asperiores vel! Eius, nemo corrupti.</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis ex aspernatur quibusdam et mollitia iure in, fugiat non tempore sapiente dolore cumque a eaque consequatur asperiores vel! Eius, nemo corrupti.</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis ex aspernatur quibusdam et mollitia iure in, fugiat non tempore sapiente dolore cumque a eaque consequatur asperiores vel! Eius, nemo corrupti.</p>
+                        <h2><?php the_title(); ?></h2>
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                        <?php the_content(); ?>
                     </div>
+
                     <div class="related_posts">
                         <h5>related posts</h5>
                         <div class="row">
@@ -65,6 +63,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="comments">
                         <h5>leave a reply</h5>
                         <form>
@@ -76,6 +75,9 @@
                         </form>
                     </div>
                 </div>
+
+
+                <!-- sidebar -->
                 <div class="col-md-4">
                     <div class="sidebar">
                         <h5>latest post</h5>
@@ -100,6 +102,7 @@
                             <a href="">10 april 2021</a> / <a href="">admin</a>
                         </div>
                     </div>
+
                     <div class="sidebar">
                         <h5>category</h5>
                         <ul>
@@ -110,6 +113,7 @@
                             <li><a href="">graphics design</a></li>
                         </ul>
                     </div>
+                    
                     <div class="sidebar">
                         <h5>latest comments</h5>
                         <ul>
