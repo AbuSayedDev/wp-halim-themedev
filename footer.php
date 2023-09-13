@@ -42,56 +42,27 @@
         <div class="row">
 
             <div class="col-lg-3">
-                <div class="single-footer">
-                    <h2>halim</h2>
-                    <p>Lorem ipsum dolor adipisicing amet, consectetur sit elit. Aspernatur incidihil quo officia.</p>
-                </div>
+                <?php
+                    if( is_active_sidebar( 'footer-1' )){
+                        dynamic_sidebar( 'footer-1' );
+                    }
+                ?>
             </div>
 
             <div class="col-xl-2 col-lg-3 mt-5 mt-lg-0">
-                <div class="single-footer">
-                    <h4>quick links</h4>
-                    <ul>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Home</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> About</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Services</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Blog</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Contact</a>
-                        </li>
-                    </ul>
-                </div>
+                <?php
+                    if( is_active_sidebar( 'footer-2' )){
+                        dynamic_sidebar( 'footer-2' );
+                    }
+                ?>
             </div>
 
             <div class="col-xl-4 col-lg-3 mt-5 mt-lg-0">
-                <div class="single-footer">
-                    <h4>latest posts</h4>
-                    <ul>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Lorem ipsum dolor sit amet.</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Lorem ipsum dolor sit amet.</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Lorem ipsum dolor sit amet.</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Lorem ipsum dolor sit amet.</a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fas fa-angle-double-right"></i> Lorem ipsum dolor sit amet.</a>
-                        </li>
-                    </ul>
-                </div>
+                <?php
+                    if( is_active_sidebar( 'footer-3' )){
+                        dynamic_sidebar( 'footer-3' );
+                    }
+                ?>
             </div>
 
             <div class="col-lg-3 mt-5 mt-sm-0">
