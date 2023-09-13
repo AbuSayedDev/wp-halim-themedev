@@ -79,51 +79,14 @@
 
                 <!-- sidebar -->
                 <div class="col-md-4">
-                    <div class="sidebar">
-                        <h5>latest post</h5>
-                        <div class="sidebar-post">
-                            <h6><a href="">Lorem ipsum dolor sit amet.</a></h6>
-                            <a href="">10 april 2021</a> / <a href="">admin</a>
-                        </div>
-                        <div class="sidebar-post">
-                            <h6><a href="">Lorem ipsum dolor sit amet.</a></h6>
-                            <a href="">10 april 2021</a> / <a href="">admin</a>
-                        </div>
-                        <div class="sidebar-post">
-                            <h6><a href="">Lorem ipsum dolor sit amet.</a></h6>
-                            <a href="">10 april 2021</a> / <a href="">admin</a>
-                        </div>
-                        <div class="sidebar-post">
-                            <h6><a href="">Lorem ipsum dolor sit amet.</a></h6>
-                            <a href="">10 april 2021</a> / <a href="">admin</a>
-                        </div>
-                        <div class="sidebar-post">
-                            <h6><a href="">Lorem ipsum dolor sit amet.</a></h6>
-                            <a href="">10 april 2021</a> / <a href="">admin</a>
-                        </div>
-                    </div>
 
-                    <div class="sidebar">
-                        <h5>category</h5>
-                        <ul>
-                            <li><a href="">web design</a></li>
-                            <li><a href="">web development</a></li>
-                            <li><a href="">software development</a></li>
-                            <li><a href="">digital mrketing</a></li>
-                            <li><a href="">graphics design</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="sidebar">
-                        <h5>latest comments</h5>
-                        <ul>
-                            <li><a href="">admin</a> on  <a href="">Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="">david</a> on  <a href="">Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="">john</a> on  <a href="">Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="">wick</a> on  <a href="">Lorem ipsum dolor sit amet.</a></li>
-                            <li><a href="">mick</a> on  <a href="">Lorem ipsum dolor sit amet.</a></li>
-                        </ul>
-                    </div>
+                    <?php if ( is_active_sidebar( 'sidebar-1' ) ) {
+
+                         dynamic_sidebar('sidebar-1');
+            
+                        } 
+                     ?>
+
                 </div>
             </div>
         </div>
