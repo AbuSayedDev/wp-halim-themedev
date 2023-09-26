@@ -26,6 +26,8 @@
                         <?php the_content(); ?>
                     </div>
 
+
+                    <!-- related posts -->
                     <div class="related_posts">
                         <h5>related posts</h5>
                         <div class="row">
@@ -64,15 +66,14 @@
                         </div>
                     </div>
 
+                    <!-- comments -->
                     <div class="comments">
-                        <h5>leave a reply</h5>
-                        <form>
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Subject">
-                            <input type="text" placeholder="Email">
-                            <textarea placeholder="Message"></textarea>
-                            <input type="submit" value="Send">
-                        </form>
+                        <?php 
+                            if(comments_open()){
+                                comments_template();
+                            }
+                        
+                        ?>
                     </div>
                 </div>
 

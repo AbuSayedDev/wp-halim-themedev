@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="blog-meta">
                                     <a href="<?php the_permalink(); ?>"><?php the_date(); ?>\</a>
-                                    <?php the_category(' '); ?>\
+                                    <?php the_category(','); ?>\
                                     <a href="<?php the_permalink(); ?>"><?php the_author(); ?></a>
                                 </div>
                                 <?php the_content(); ?>
