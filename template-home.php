@@ -517,8 +517,9 @@ get_header(); ?>
                                     <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                                 </div>
                                 <div class="blog-meta">
-                                    <a href="">5 Jan 2020</a>
-                                    <a href="">admin</a>
+                                    <a href="<?php the_permalink( ); ?>"><?php the_date(); ?></a> / 
+                                    <a href="<?php the_permalink( ); ?>"><?php the_category(','); ?> </a> / 
+                                    <?php the_author_posts_link(); ?>
                                 </div>
                                 <?php the_content(); ?>
                                 <a href="<?php the_permalink(); ?>" class="box-btn">read more</a>

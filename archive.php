@@ -39,7 +39,7 @@
                                 <div class="blog-meta">
                                     <a href="<?php the_permalink(); ?>"><?php the_date(); ?>\</a>
                                     <?php the_category(','); ?>\
-                                    <a href="<?php the_permalink(); ?>"><?php the_author(); ?></a>
+                                    <?php the_author_posts_link() ?>
                                 </div>
                                 <?php the_content(); ?>
                                 <a href="<?php the_permalink(); ?>" class="box-btn">read more</a>
