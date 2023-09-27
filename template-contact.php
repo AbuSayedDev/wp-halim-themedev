@@ -21,25 +21,27 @@ get_header(); ?>
 
                     <?php 
 
-                        $contact_address = get_field('contact_address', 'option');
+                        if(class_exists('ACF')){
+                            $contact_address = get_field('contact_address', 'option');
 
-                        foreach($contact_address as $contact_addres){
+                            foreach($contact_address as $contact_addres){
 
-                        ?>
-                            <div class="col-md-4">
-                                <div class="contact-address">
+                            ?>
+                                <div class="col-md-4">
+                                    <div class="contact-address">
 
-                                <?php
-                                    if($contact_addres['icon']){ ?>
-                                        <i class="<?php echo $contact_addres['icon']; ?>"></i>
-                                  <?php  }
-                                ?>
-                                    
-                                    <h4><?php echo $contact_addres['name']; ?> <span><?php echo $contact_addres['descriptions']; ?></span></h4>
+                                    <?php
+                                        if($contact_addres['icon']){ ?>
+                                            <i class="<?php echo esc_attr($contact_addres['icon']); ?>"></i>
+                                    <?php  }
+                                    ?>
+                                        
+                                        <h4><?php echo esc_attr($contact_addres['name']); ?> <span><?php echo esc_attr($contact_addres['descriptions']); ?></span></h4>
+                                    </div>
                                 </div>
-                            </div>
 
-                       <?php }
+                        <?php }
+                        }
                     
                     ?>
 

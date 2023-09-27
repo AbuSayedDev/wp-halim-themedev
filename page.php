@@ -19,8 +19,8 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4><?php the_title(); ?></h4>
-                    <?php the_content(); ?>
+                    <h4><?php esc_attr(the_title()); ?></h4>
+                    <?php esc_attr(the_content()); ?>
                 </div>
             </div>
         </div>

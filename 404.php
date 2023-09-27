@@ -9,7 +9,7 @@
                     <div class="img-area text-center">
                         <img src="<?php echo get_template_directory_uri() . '/assets/images/404page-found.avif'; ?>" class="img-fluid" alt="<?php the_title(); ?>">
                         <br>
-                        <a href="<?php echo site_url(); ?>" class="btn btn-primary text-white">Home</a>
+                        <a href="<?php echo esc_url(site_url()); ?>" class="btn btn-primary text-white">Home</a>
                     </div>
                 </div>
             </div>
